@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Chapter 18 • O Significado do Teu Presente | Edição Dourada</title>
+  
+  <!-- Meta tags & OpenGraph -->
+  <meta name="description" content="Um presente com significado para o teu 18º aniversário: o teu passaporte para a literacia financeira, crypto e independência.">
+  <meta property="og:title" content="Feliz 18º Aniversário • O Teu Presente Especial">
+  <meta property="og:description" content="Descobre o significado por detrás da tua Bitcoin física e a jornada que começa hoje.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#0a0a0f">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/coin-bitcoin.svg">
+
+  <!-- Google Fonts: Luxury Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="luxury-theme">
+  <!-- Ambient Background Canvas / Floating Golden Particles -->
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+
+  <!-- Sound Toggle & Print Helper Bar -->
+  <nav class="top-nav" aria-label="Navegação rápida">
+    <div class="nav-brand">
+      <span class="gold-badge">CHAPTER 18</span>
+      <span class="nav-edition">GOLDEN EDITION</span>
+    </div>
+    <div class="nav-actions">
+      <button id="soundToggleBtn" class="pill-btn nav-btn" aria-label="Ativar/Desativar som comemorativo" title="Som de Celebração">
+        <span class="btn-icon" id="soundIcon">🔔</span>
+        <span class="btn-text">Efeitos Sonoros</span>
+      </button>
+      <button id="openQrModalBtn" class="pill-btn nav-btn btn-gold-outline" aria-label="Ver ou Imprimir Cartão QR Code para o Presente">
+        <span class="btn-icon">🎁</span>
+        <span class="btn-text">Cartão QR do Presente</span>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <!-- HERO SECTION: THE UNBOXING EXPERIENCE -->
+    <header class="hero-section" id="hero">
+      <div class="hero-glow"></div>
+      
+      <div class="container hero-container">
+        <div class="hero-eyebrow">
+          <span class="sparkle-star">✦</span>
+          <span>18º ANIVERSÁRIO • O TEU GRANDE MARCO</span>
+          <span class="sparkle-star">✦</span>
+        </div>
+
+        <h1 class="hero-title">
+          Parabéns pelos teus <br>
+          <span class="gold-text-gradient shimmer-text">18 Anos!</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Na tua mão tens uma moeda com peso e história. Mas ela é muito mais do que um objeto: é o símbolo de uma porta que se abre para o teu futuro, a tua independência e o mundo inteiro.
+        </p>
+
+        <!-- 3D INTERACTIVE BITCOIN DISPLAY -->
+        <div class="coin-interactive-wrapper" id="coinTiltContainer">
+          <div class="coin-tilt-card" id="coinCard" tabindex="0" role="region" aria-label="Moeda Bitcoin 3D Interativa">
+            <div class="coin-3d">
+              <!-- Front Side of Coin -->
+              <div class="coin-face coin-front">
+                <img src="assets/coin-bitcoin.svg" alt="Bitcoin Dourada Réplica" class="coin-img" loading="eager" width="280" height="280">
+                <div class="coin-shine-glare"></div>
+              </div>
+              
+              <!-- Back Side of Coin -->
+              <div class="coin-face coin-back">
+                <div class="coin-back-inner">
+                  <div class="coin-back-badge">CHAPTER 18</div>
+                  <div class="coin-back-icon">₿</div>
+                  <div class="coin-back-quote">«O futuro pertence a quem tem a coragem de o construir.»</div>
+                  <div class="coin-back-footer">PARIS • NYC • DOMINICANA</div>
+                </div>
+                <div class="coin-shine-glare"></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="coin-controls">
+            <button id="flipCoinBtn" class="pill-btn coin-action-btn">
+              <span class="rotate-icon">↻</span> Rodar Moeda (Frente / Verso)
+            </button>
+            <p class="coin-hint">Move o rato ou inclina o telemóvel para ver o reflexo dourado</p>
+          </div>
+        </div>
+
+        <!-- REVEAL / ACTION BUTTON -->
+        <div class="hero-cta-group">
+          <button id="celebrateBtn" class="luxury-btn-primary">
+            <span class="btn-shimmer"></span>
+            <span class="btn-content">
+              <span class="celebrate-sparkles">✨</span>
+              <span>Desvendar o Segredo do Teu Presente</span>
+              <span class="celebrate-sparkles">✨</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- SECTION 1: THE REAL MEANING -->
+    <section class="section manifesto-section" id="significado">
+      <div class="container">
+        <div class="section-badge">O SIGNIFICADO REAL</div>
+        <h2 class="section-title">Mais do que uma réplica.<br><span class="gold-text-gradient">Um pacto para o teu futuro.</span></h2>
+        
+        <div class="manifesto-card glass-panel">
+          <div class="manifesto-seal">18</div>
+          <p class="manifesto-lead">
+            Quando abriste o presente e viste esta moeda dourada de Bitcoin, talvez tenhas pensado que era apenas uma peça de coleção para colocar na secretária.
+          </p>
+          <div class="gold-divider"></div>
+          <p class="manifesto-body">
+            Na verdade, ela é a <strong>chave física</strong> de uma promessa: a promessa de que vais entrar na vida adulta com a melhor ferramenta que alguém pode ter — <em>o conhecimento financeiro, a tecnologia do futuro e a liberdade de gerires o que é teu.</em>
+          </p>
+          <p class="manifesto-highlight">
+            Aqui está exatamente o que este presente significa na prática:
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: OS 4 PILARES DO PRESENTE (CARTEIRA, MENTORIA, SALDO, EXCHANGE) -->
+    <section class="section pillars-section" id="pilares">
+      <div class="container">
+        <div class="section-badge">OS 4 COMPROMISSOS</div>
+        <h2 class="section-title">O que vamos fazer <span class="gold-text-gradient">juntos:</span></h2>
+        <p class="section-subtitle">Um roteiro passo a passo desenhado especialmente para ti, sem pressas e com toda a segurança.</p>
+
+        <div class="pillars-grid">
+          <!-- Pilar 1: Criar a Carteira -->
+          <article class="pillar-card glass-panel">
+            <div class="pillar-number">01</div>
+            <div class="pillar-icon-box">
+              <span class="pillar-icon">🗝️</span>
+            </div>
+            <h3 class="pillar-title">A Tua Primeira Carteira Digital</h3>
+            <p class="pillar-desc">
+              Vou ensinar-te a criar a tua <strong>carteira crypto pessoal</strong> (wallet segura descentralizada). Vais aprender como funcionam as chaves privadas, porque tu serás a tua própria guardiã e como manter os teus ativos 100% seguros e blindados.
+            </p>
+            <div class="pillar-badge">Passo Inicial • Segurança Total</div>
+          </article>
+
+          <!-- Pilar 2: Mentoria do Ecossistema -->
+          <article class="pillar-card glass-panel highlight-pillar">
+            <div class="pillar-glow"></div>
+            <div class="pillar-number">02</div>
+            <div class="pillar-icon-box">
+              <span class="pillar-icon">🧠</span>
+            </div>
+            <h3 class="pillar-title">Mentoria & O Ecossistema</h3>
+            <p class="pillar-desc">
+              Vou partilhar contigo <strong>tudo o que aprendi</strong> sobre este universo: o que é a blockchain, como funciona a descentralização, como distinguir valor real de ruído, como pensar no longo prazo e, acima de tudo, como navegar o mundo digital sem cair em armadilhas.
+            </p>
+            <div class="pillar-badge">Conhecimento que fica para a Vida</div>
+          </article>
+
+          <!-- Pilar 3: Transferência Inicial Real -->
+          <article class="pillar-card glass-panel special-gift-pillar">
+            <div class="pillar-number">03</div>
+            <div class="pillar-icon-box">
+              <span class="pillar-icon">⚡</span>
+            </div>
+            <h3 class="pillar-title">O Teu Primeiro Saldo Crypto</h3>
+            <p class="pillar-desc">
+              Não vamos ficar só pela teoria! Assim que a tua carteira estiver criada e configurada com rigor, <strong>vou transferir-te algumas das minhas próprias criptomoedas</strong> para que comeces a tua jornada com fundos reais e sintas o poder de receber a tua primeira transação na blockchain.
+            </p>
+            <div class="pillar-badge gold-filled">Oferta Real de Boas-Vindas</div>
+          </article>
+
+          <!-- Pilar 4: Conta na Exchange -->
+          <article class="pillar-card glass-panel">
+            <div class="pillar-number">04</div>
+            <div class="pillar-icon-box">
+              <span class="pillar-icon">🏛️</span>
+            </div>
+            <h3 class="pillar-title">A Tua Conta numa Exchange</h3>
+            <p class="pillar-desc">
+              Completar 18 anos é um marco inesquecível. E, <strong>com a devida autorização e bênção dos teus pais</strong>, estarei ao teu lado para abrir a tua primeira conta numa corretora/exchange regulada e de confiança, para aprenderes a comprar, poupar e gerir os teus investimentos.
+            </p>
+            <div class="pillar-badge">Com Autorização Familiar • Futuro Responsável</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: OS DESTINOS DOS TEUS SONHOS (NYC, PARIS, REPÚBLICA DOMINICANA) -->
+    <section class="section travel-section" id="destinos">
+      <div class="container">
+        <div class="section-badge">INSPIRAÇÃO & ESTILO DE VIDA</div>
+        <h2 class="section-title">O Teu Passaporte Para o Mundo<br><span class="gold-text-gradient">Paris • Nova Iorque • Caraíbas</span></h2>
+        <p class="section-subtitle">
+          A verdadeira riqueza não é apenas um número no ecrã: é a liberdade de viver experiências inesquecíveis nos lugares que mais amas.
+        </p>
+
+        <!-- LUXURY BOARDING PASS INTERACTIVE TICKET -->
+        <div class="vip-ticket-wrapper">
+          <div class="vip-ticket glass-panel">
+            <div class="ticket-stub-left">
+              <div class="ticket-tag">VIP PASSENGER • 18TH CHAPTER</div>
+              <div class="ticket-route">
+                <div class="route-point">
+                  <span class="code">PAR</span>
+                  <span class="city">Paris</span>
+                </div>
+                <div class="route-line">
+                  <span class="plane-icon">✈</span>
+                </div>
+                <div class="route-point">
+                  <span class="code">NYC</span>
+                  <span class="city">New York</span>
+                </div>
+                <div class="route-line">
+                  <span class="plane-icon">✈</span>
+                </div>
+                <div class="route-point">
+                  <span class="code">PUJ</span>
+                  <span class="city">Rep. Dominicana</span>
+                </div>
+              </div>
+              <div class="ticket-meta">
+                <div class="meta-item">
+                  <span class="lbl">TITULAR</span>
+                  <span class="val">Aniversariante VIP</span>
+                </div>
+                <div class="meta-item">
+                  <span class="lbl">DESTINO</span>
+                  <span class="val">Independência & Sonhos</span>
+                </div>
+                <div class="meta-item">
+                  <span class="lbl">CLASSE</span>
+                  <span class="val">Primeira Classe • 18 Anos</span>
+                </div>
+              </div>
+            </div>
+            <div class="ticket-divider">
+              <div class="notch notch-top"></div>
+              <div class="dashed-line"></div>
+              <div class="notch notch-bottom"></div>
+            </div>
+            <div class="ticket-stub-right">
+              <div class="barcode-graphic">
+                <div class="barcode-lines"></div>
+                <span class="barcode-text">#18-GOLDEN-FUTURE</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DESTINATIONS SHOWCASE -->
+        <div class="destinations-grid">
+          <!-- Nova Iorque -->
+          <div class="dest-card glass-panel" tabindex="0">
+            <div class="dest-img-container">
+              <img src="assets/dest-nyc.svg" alt="Nova Iorque Skyline" class="dest-img" loading="lazy">
+              <div class="dest-badge">Ambição & Energia</div>
+            </div>
+            <div class="dest-content">
+              <div class="dest-location">
+                <span class="dest-flag">🇺🇸</span>
+                <span class="dest-name">Nova Iorque</span>
+              </div>
+              <h3 class="dest-heading">A Cidade Que Nunca Dorme</h3>
+              <p class="dest-text">
+                O coração financeiro do mundo, as luzes da Broadway e a elegância da 5ª Avenida. Que a energia desta cidade te inspire a nunca teres medo de pensar em grande e de conquistar o teu próprio espaço.
+              </p>
+              <div class="dest-quote">«Concrete jungle where dreams are made of.»</div>
+            </div>
+          </div>
+
+          <!-- Paris -->
+          <div class="dest-card glass-panel" tabindex="0">
+            <div class="dest-img-container">
+              <img src="assets/dest-paris.svg" alt="Paris Torre Eiffel" class="dest-img" loading="lazy">
+              <div class="dest-badge">Elegância & Alta-Costura</div>
+            </div>
+            <div class="dest-content">
+              <div class="dest-location">
+                <span class="dest-flag">🇫🇷</span>
+                <span class="dest-name">Paris</span>
+              </div>
+              <h3 class="dest-heading">A Cidade da Luz e do Glamour</h3>
+              <p class="dest-text">
+                A sofisticação dos cafés parisienses, o requinte dos Campos Elísios e o brilho inconfundível da Torre Eiffel. Que a tua vida seja sempre pautada por classe, beleza e celebração.
+              </p>
+              <div class="dest-quote">«La vie est belle quando somos nós a escolher o caminho.»</div>
+            </div>
+          </div>
+
+          <!-- República Dominicana -->
+          <div class="dest-card glass-panel" tabindex="0">
+            <div class="dest-img-container">
+              <img src="assets/dest-dominican.svg" alt="República Dominicana Pôr do Sol Tropical" class="dest-img" loading="lazy">
+              <div class="dest-badge">Paraíso & Liberdade</div>
+            </div>
+            <div class="dest-content">
+              <div class="dest-location">
+                <span class="dest-flag">🇩🇴</span>
+                <span class="dest-name">República Dominicana</span>
+              </div>
+              <h3 class="dest-heading">O Sol Tropical das Caraíbas</h3>
+              <p class="dest-text">
+                O mar turquesa, as palmeiras a dançar com a brisa e a areia dourada de Punta Cana. Que nunca te esqueças de celebrar cada conquista e desfrutar do lado mais doce e ensolarado da vida.
+              </p>
+              <div class="dest-quote">«O paraíso é estar em paz e dona das tuas escolhas.»</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: AS REGRAS DE OURO DA TUA NOVA JORNADA -->
+    <section class="section rules-section" id="seguranca">
+      <div class="container">
+        <div class="rules-card glass-panel">
+          <div class="rules-header">
+            <span class="rules-icon">🛡️</span>
+            <div>
+              <h2 class="rules-title">As Três Regras de Ouro</h2>
+              <p class="rules-subtitle">Princípios que vais aprender comigo desde o primeiro dia:</p>
+            </div>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-box">
+              <span class="rule-num">I</span>
+              <h4>A Tua Segurança Primeiro</h4>
+              <p>As tuas palavras de recuperação (seed phrase) são secretas como um diário. Ninguém — nem suporte nem amigos — alguma vez as deve ver.</p>
+            </div>
+            <div class="rule-box">
+              <span class="rule-num">II</span>
+              <h4>Paciência bate a Pressa</h4>
+              <p>O verdadeiro património constrói-se com calma, conhecimento e visão de futuro, sem cair em modas passageiras ou promessas fáceis.</p>
+            </div>
+            <div class="rule-box">
+              <span class="rule-num">III</span>
+              <h4>A Família & O Apoio Sempre Perto</h4>
+              <p>Todas as decisões importantes são feitas com diálogo, transparência e com os teus pais a acompanhar o teu crescimento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: DEDICATÓRIA PESSOAL -->
+    <section class="section letter-section" id="dedicatoria">
+      <div class="container letter-container">
+        <article class="parchment-letter glass-panel">
+          <div class="letter-top-seal">
+            <span>★ 18 ANOS ★</span>
+          </div>
+          
+          <h2 class="letter-heading">Um Brinde ao Teu Novo Capítulo</h2>
+          
+          <p class="letter-p">
+            Parabéns pelos teus tão aguardados 18 anos! Chegar a este marco é um momento extraordinário. É a entrada oficial no mundo dos adultos, com todos os sonhos, escolhas e horizontes abertos à tua frente.
+          </p>
+
+          <p class="letter-p">
+            Esta moeda de Bitcoin física que tens na mão é o meu voto de confiança em ti. Quero que tenhas a curiosidade de aprender, a coragem de sonhar alto como os arranha-céus de Manhattan, a classe intemporal de Paris e a alegria contagiante das praias das Caraíbas.
+          </p>
+
+          <p class="letter-p">
+            Estarei sempre aqui para te apoiar, para te ensinar e para comemorar cada vitória tua ao lado da tua mãe e de quem mais te ama.
+          </p>
+
+          <div class="letter-signoff">
+            <p class="letter-warmth">Com todo o carinho e admiração,</p>
+            <p class="letter-signature">João</p>
+            <span class="letter-date">Edição Especial de Aniversário</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="luxury-footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="gold-text-gradient font-serif">Chapter 18 • Golden Edition</span>
+        <p>Um presente desenhado para durar uma vida inteira.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#hero">Início</a>
+        <a href="#significado">O Significado</a>
+        <a href="#pilares">Os 4 Pilares</a>
+        <a href="#destinos">Os Destinos</a>
+        <a href="#dedicatoria">Dedicatória</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Edição Privada e Comemorativa dos 18 Anos • Feito com amor e orgulho</p>
+    </div>
+  </footer>
+
+  <!-- MODAL: QR CODE PRINTABLE CARD GENERATOR -->
+  <div class="modal-backdrop" id="qrModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+    <div class="modal-card glass-panel">
+      <button class="modal-close-btn" id="closeQrModalBtn" aria-label="Fechar janela">&times;</button>
+      
+      <div class="modal-header">
+        <span class="modal-badge">PRESENTE FÍSICO</span>
+        <h3 id="modalTitle" class="modal-title">Cartão QR Code para o Presente</h3>
+        <p class="modal-subtitle">Imprime ou guarda este cartão para colocar dentro da caixa ao lado da réplica da moeda Bitcoin!</p>
+      </div>
+
+      <!-- Printable Luxury Gift Tag Preview -->
+      <div class="gift-card-preview" id="giftCardPrintArea">
+        <div class="gift-card-border">
+          <div class="gift-card-inner">
+            <div class="tag-header">
+              <span class="tag-sub">EDITION N° 18</span>
+              <h4 class="tag-title">CHAPTER 18</h4>
+              <span class="tag-gold-line"></span>
+            </div>
+
+            <!-- Dynamic SVG QR Code Container -->
+            <div class="qr-canvas-wrapper">
+              <div id="qrCodeContainer" class="qr-box">
+                <!-- QR code SVG will be rendered here dynamically -->
+              </div>
+            </div>
+
+            <div class="tag-scan-instruction">
+              <p class="tag-cta">✨ APONTA A CÂMARA DO TELEMÓVEL ✨</p>
+              <p class="tag-explain">Descobre o significado especial desta moeda e o presente que temos preparado para ti.</p>
+            </div>
+
+            <div class="tag-destinations">
+              <span>PARIS</span> • <span>NEW YORK</span> • <span>REP. DOMINICANA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Settings / Custom URL Field -->
+      <div class="modal-settings">
+        <label for="customUrlInput" class="setting-label">URL do Teu GitHub Pages:</label>
+        <div class="input-with-button">
+          <input type="url" id="customUrlInput" class="custom-url-input" value="https://jmjaneiro.github.io/aniversario-18-crypto/">
+          <button id="updateQrBtn" class="pill-btn nav-btn">Atualizar QR</button>
+        </div>
+        <p class="setting-help">Se alojares este repositório no teu GitHub, o endereço acima será o link oficial da página!</p>
+      </div>
+
+      <div class="modal-actions">
+        <button id="printCardBtn" class="luxury-btn-primary">
+          <span class="btn-icon">🖨️</span> Imprimir Cartão de Oferta
+        </button>
+        <button id="downloadQrBtn" class="pill-btn nav-btn">
+          <span class="btn-icon">💾</span> Descarregar Imagem QR
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio synthesizer & interaction scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
