@@ -26,17 +26,10 @@
   <!-- Ambient Background Canvas / Floating Golden Particles -->
   <canvas id="particleCanvas" aria-hidden="true"></canvas>
 
-  <!-- Sound Toggle & Print Helper Bar -->
   <nav class="top-nav" aria-label="Navegação rápida">
     <div class="nav-brand">
       <span class="gold-badge">CHAPTER 18</span>
       <span class="nav-edition">GOLDEN EDITION</span>
-    </div>
-    <div class="nav-actions">
-      <button id="openQrModalBtn" class="pill-btn nav-btn btn-gold-outline" aria-label="Ver ou Imprimir Cartão QR Code para o Presente">
-        <span class="btn-icon">🎁</span>
-        <span class="btn-text">Cartão QR do Presente</span>
-      </button>
     </div>
   </nav>
 
@@ -223,63 +216,6 @@
       <p>© Edição Privada e Comemorativa pelos 18 anos da Beatriz • Feito com amor e orgulho</p>
     </div>
   </footer>
-
-  <!-- MODAL: QR CODE PRINTABLE CARD GENERATOR -->
-  <div class="modal-backdrop" id="qrModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
-    <div class="modal-card glass-panel">
-      <button class="modal-close-btn" id="closeQrModalBtn" aria-label="Fechar janela">&times;</button>
-      
-      <div class="modal-header">
-        <span class="modal-badge">PRESENTE FÍSICO</span>
-        <h3 id="modalTitle" class="modal-title">Cartão QR Code para o Presente</h3>
-        <p class="modal-subtitle">Imprime ou guarda este cartão para colocar dentro da caixa ao lado da réplica da moeda Bitcoin!</p>
-      </div>
-
-      <!-- Printable Luxury Gift Tag Preview -->
-      <div class="gift-card-preview" id="giftCardPrintArea">
-        <div class="gift-card-border">
-          <div class="gift-card-inner">
-            <div class="tag-header">
-              <span class="tag-sub">EDITION N° 18</span>
-              <h4 class="tag-title">CHAPTER 18</h4>
-              <span class="tag-gold-line"></span>
-            </div>
-
-            <!-- High-Res QR Code Container -->
-            <div class="qr-canvas-wrapper">
-              <div id="qrCodeContainer" class="qr-box">
-                <img src="assets/qr-code.png" alt="QR Code para o Teu Presente" width="180" height="180" id="currentQrImage">
-              </div>
-            </div>
-
-            <div class="tag-scan-instruction">
-              <p class="tag-cta">✨ APONTA A CÂMARA DO TELEMÓVEL ✨</p>
-              <p class="tag-explain">Descobre o significado especial desta moeda e o presente que temos preparado para ti.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Settings / Custom URL Field -->
-      <div class="modal-settings">
-        <label for="customUrlInput" class="setting-label">URL do Teu GitHub Pages:</label>
-        <div class="input-with-button">
-          <input type="url" id="customUrlInput" class="custom-url-input" value="https://jmjaneiro.github.io/aniversario-18-crypto/">
-          <button id="updateQrBtn" class="pill-btn nav-btn">Atualizar QR</button>
-        </div>
-        <p class="setting-help">Se alojares este repositório no teu GitHub, o endereço acima será o link oficial da página!</p>
-      </div>
-
-      <div class="modal-actions">
-        <button id="printCardBtn" class="luxury-btn-primary">
-          <span class="btn-icon">🖨️</span> Imprimir Cartão de Oferta
-        </button>
-        <button id="downloadQrBtn" class="pill-btn nav-btn">
-          <span class="btn-icon">💾</span> Descarregar Imagem QR
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- Audio synthesizer & interaction scripts -->
   <script src="script.js"></script>

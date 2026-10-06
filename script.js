@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initCoin3DTilt();
   initAudioSystem();
   initCelebrationFlow();
-  initQrModal();
 });
 
 /* ==========================================================================
@@ -325,75 +324,4 @@ function triggerGoldenConfetti() {
   updateConfetti();
 }
 
-/* ==========================================================================
-   5. QR CODE PRINTABLE MODAL & LIVE GENERATOR
-   ========================================================================== */
-function initQrModal() {
-  const modal = document.getElementById('qrModal');
-  const openBtn = document.getElementById('openQrModalBtn');
-  const closeBtn = document.getElementById('closeQrModalBtn');
-  const printBtn = document.getElementById('printCardBtn');
-  const downloadBtn = document.getElementById('downloadQrBtn');
-  const updateBtn = document.getElementById('updateQrBtn');
-  const urlInput = document.getElementById('customUrlInput');
-  const qrContainer = document.getElementById('qrCodeContainer');
 
-  if (!modal) return;
-
-  function loadInitialQr() {
-    if (qrContainer) {
-      qrContainer.innerHTML = `<img src="assets/qr-code.png" alt="QR Code para o Teu Presente" width="180" height="180" id="currentQrImage" onerror="this.src='assets/qr-code.svg'">`;
-    }
-  }
-  loadInitialQr();
-
-  // Open modal
-  openBtn?.addEventListener('click', () => {
-    modal.hidden = false;
-    setTimeout(() => modal.classList.add('active'), 10);
-    playCrystalChime(660);
-  });
-
-  // Close modal
-  function closeModal() {
-    modal.classList.remove('active');
-    setTimeout(() => (modal.hidden = true), 300);
-  }
-
-  closeBtn?.addEventListener('click', closeModal);
-
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) closeModal();
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !modal.hidden) closeModal();
-  });
-
-  // Print button
-  printBtn?.addEventListener('click', () => {
-    window.print();
-  });
-
-  // Download QR code image
-  downloadBtn?.addEventListener('click', () => {
-    const link = document.createElement('a');
-    link.href = 'assets/qr-code.png';
-    link.download = 'cartao-presente-beatriz-18.png';
-    link.click();
-  });
-
-  // Update QR Code with custom URL if edited
-  updateBtn?.addEventListener('click', () => {
-    const url = urlInput?.value?.trim();
-    if (!url) return;
-
-    // Use lightweight Google Charts / standard dynamic SVG QR fallback for custom links
-    const qrEncodedUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&format=svg&data=${encodeURIComponent(url)}`;
-    
-    if (qrContainer) {
-      qrContainer.innerHTML = `<img src="${qrEncodedUrl}" alt="QR Code Atualizado" width="170" height="170" id="currentQrImage" onerror="this.src='assets/qr-code.svg'">`;
-    }
-    playCrystalChime(800);
-  });
-}
