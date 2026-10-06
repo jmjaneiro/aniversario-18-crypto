@@ -342,7 +342,7 @@ function initQrModal() {
 
   function loadInitialQr() {
     if (qrContainer) {
-      qrContainer.innerHTML = `<img src="assets/qr-code.svg" alt="QR Code para o Teu Presente" width="170" height="170" id="currentQrImage">`;
+      qrContainer.innerHTML = `<img src="assets/qr-code.png" alt="QR Code para o Teu Presente" width="180" height="180" id="currentQrImage" onerror="this.src='assets/qr-code.svg'">`;
     }
   }
   loadInitialQr();
@@ -375,11 +375,11 @@ function initQrModal() {
     window.print();
   });
 
-  // Download QR code SVG
+  // Download QR code image
   downloadBtn?.addEventListener('click', () => {
     const link = document.createElement('a');
-    link.href = 'assets/qr-code.svg';
-    link.download = 'cartao-presente-bitcoin-18.svg';
+    link.href = 'assets/qr-code.png';
+    link.download = 'cartao-presente-beatriz-18.png';
     link.click();
   });
 
