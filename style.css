@@ -616,6 +616,44 @@ body::before {
   border-radius: 22px;
   position: relative;
   overflow: hidden;
+  cursor: default;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s ease,
+              border-color 0.4s ease,
+              background 0.4s ease;
+}
+
+/* Light Sheen Sweep across Card on Hover */
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    105deg,
+    transparent 20%,
+    rgba(255, 238, 163, 0.16) 50%,
+    transparent 80%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.75s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.pillar-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--gold-400);
+  background: linear-gradient(180deg, rgba(32, 40, 64, 0.88) 0%, rgba(18, 23, 38, 0.85) 100%);
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.6),
+              0 0 35px rgba(212, 175, 55, 0.3),
+              inset 0 1px 2px rgba(255, 240, 180, 0.4);
+}
+
+.pillar-card:hover::before {
+  left: 140%;
 }
 
 .pillar-number {
@@ -627,6 +665,12 @@ body::before {
   font-weight: 900;
   color: rgba(212, 175, 55, 0.12);
   line-height: 1;
+  transition: color 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pillar-card:hover .pillar-number {
+  color: rgba(212, 175, 55, 0.32);
+  transform: translateY(-3px) scale(1.1);
 }
 
 .pillar-icon {
@@ -635,6 +679,12 @@ body::before {
   margin-bottom: 1.25rem;
   display: inline-block;
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.pillar-card:hover .pillar-icon {
+  transform: scale(1.18) translateY(-4px);
+  filter: drop-shadow(0 6px 16px rgba(255, 220, 107, 0.6));
 }
 
 .pillar-title {
@@ -644,6 +694,11 @@ body::before {
   line-height: 1.35;
   color: #ffffff;
   margin-bottom: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.pillar-card:hover .pillar-title {
+  color: var(--gold-100);
 }
 
 .pillar-desc {
@@ -652,6 +707,11 @@ body::before {
   color: var(--text-muted);
   margin-bottom: 0;
   flex-grow: 1;
+  transition: color 0.3s ease;
+}
+
+.pillar-card:hover .pillar-desc {
+  color: #dde1ec;
 }
 
 .highlight-pillar {
@@ -659,9 +719,20 @@ body::before {
   background: linear-gradient(180deg, rgba(30, 38, 62, 0.8) 0%, rgba(18, 23, 36, 0.75) 100%);
 }
 
+.highlight-pillar:hover {
+  background: linear-gradient(180deg, rgba(38, 48, 76, 0.92) 0%, rgba(22, 28, 46, 0.9) 100%);
+  border-color: var(--gold-300);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.65), 0 0 40px rgba(212, 175, 55, 0.35);
+}
+
 .special-gift-pillar {
   border-color: var(--gold-400);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.2);
+}
+
+.special-gift-pillar:hover {
+  border-color: var(--gold-200);
+  box-shadow: 0 28px 65px rgba(0, 0, 0, 0.7), 0 0 45px rgba(212, 175, 55, 0.45);
 }
 
 /* ==========================================================================
