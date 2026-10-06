@@ -92,7 +92,6 @@ function initCoin3DTilt() {
   const container = document.getElementById('coinTiltContainer');
   const card = document.getElementById('coinCard');
   const coin3D = card?.querySelector('.coin-3d');
-  const flipBtn = document.getElementById('flipCoinBtn');
   const glares = document.querySelectorAll('.coin-shine-glare');
 
   if (!card || !container || !coin3D) return;
@@ -100,15 +99,7 @@ function initCoin3DTilt() {
   let isFlipped = false;
   let isHovered = false;
 
-  // Toggle flip on button click
-  flipBtn?.addEventListener('click', (e) => {
-    e.preventDefault();
-    isFlipped = !isFlipped;
-    coin3D.classList.toggle('flipped', isFlipped);
-    playCrystalChime(isFlipped ? 660 : 520);
-  });
-
-  // Also toggle flip on clicking the card itself
+  // Toggle flip on clicking/tapping the card itself
   card.addEventListener('click', () => {
     isFlipped = !isFlipped;
     coin3D.classList.toggle('flipped', isFlipped);
@@ -178,19 +169,14 @@ let audioCtx = null;
 let soundEnabled = true;
 
 function initAudioSystem() {
-  const toggleBtn = document.getElementById('soundToggleBtn');
-  const soundIcon = document.getElementById('soundIcon');
-
-  toggleBtn?.addEventListener('click', () => {
-    soundEnabled = !soundEnabled;
-    if (soundIcon) {
-      soundIcon.textContent = soundEnabled ? '🔔' : '🔕';
-    }
-    toggleBtn.classList.toggle('btn-gold-outline', soundEnabled);
-    if (soundEnabled) {
-      playCrystalChime(880);
-    }
-  });
+  soundEnabled = true;
+  const unlockAudio = () => {
+    getAudioContext();
+    window.removeEventListener('click', unlockAudio);
+    window.removeEventListener('touchstart', unlockAudio);
+  };
+  window.addEventListener('click', unlockAudio, { once: true });
+  window.addEventListener('touchstart', unlockAudio, { once: true });
 }
 
 function getAudioContext() {
