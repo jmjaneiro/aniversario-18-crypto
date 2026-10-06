@@ -612,7 +612,7 @@ body::before {
   padding: 2.5rem 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   border-radius: 22px;
   position: relative;
   overflow: hidden;
@@ -629,21 +629,12 @@ body::before {
   line-height: 1;
 }
 
-.pillar-icon-box {
-  width: 58px;
-  height: 58px;
-  border-radius: 16px;
-  background: rgba(212, 175, 55, 0.12);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
 .pillar-icon {
-  font-size: 1.8rem;
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 1.25rem;
+  display: inline-block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
 }
 
 .pillar-title {
@@ -657,22 +648,10 @@ body::before {
 
 .pillar-desc {
   font-size: 0.95rem;
-  line-height: 1.7;
+  line-height: 1.75;
   color: var(--text-muted);
-  margin-bottom: 1.5rem;
+  margin-bottom: 0;
   flex-grow: 1;
-}
-
-.pillar-badge {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  padding: 0.4rem 0.85rem;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--gold-200);
-  align-self: flex-start;
 }
 
 .highlight-pillar {
@@ -683,13 +662,6 @@ body::before {
 .special-gift-pillar {
   border-color: var(--gold-400);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.2);
-}
-
-.pillar-badge.gold-filled {
-  background: linear-gradient(135deg, var(--gold-300), var(--gold-500));
-  color: #120e04;
-  border: none;
-  font-weight: 700;
 }
 
 /* ==========================================================================
