@@ -538,17 +538,12 @@ body::before {
    ========================================================================== */
 .manifesto-section {
   text-align: center;
-  padding-bottom: 2rem;
-}
-
-.pillars-section {
-  padding-top: 1.5rem;
 }
 
 .manifesto-card {
   max-width: 820px;
-  margin: 2rem auto 0;
-  padding: 3rem 2.5rem;
+  margin: 2.5rem auto 0;
+  padding: 3.5rem 2.75rem;
   text-align: center;
   position: relative;
   overflow: hidden;
